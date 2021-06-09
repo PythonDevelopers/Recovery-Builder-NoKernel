@@ -19,6 +19,8 @@ env:
   DEVICE: begonia
   DT_LINK: https://github.com/HyperNotAryanX97/device_redmi_begonia
   DT_PATH: device/redmi/begonia
+  VT_LINK: https://github.com/HyperNotAryanX97/vendor_redmi_begonia
+  VT_PATH: vendor/redmi/begonia
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
@@ -52,7 +54,8 @@ jobs:
              repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
              repo sync -j4
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
-             
+             git clone $VT_LINK --depth=1 --single-branch $VT_PATH
+
        - name: Build
          run: |
               cd work
