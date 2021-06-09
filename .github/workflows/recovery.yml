@@ -54,8 +54,6 @@ jobs:
              repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
              git clone https://github.com/sasukeuchiha-clan/Begonia.git --depth 1 -b test .repo/local_manifests
              repo sync -j4
-             git clone $DT_LINK --depth=1 --single-branch $DT_PATH
-             git clone $VT_LINK --depth=1 --single-branch $VT_PATH
 
        - name: Build
          run: |
